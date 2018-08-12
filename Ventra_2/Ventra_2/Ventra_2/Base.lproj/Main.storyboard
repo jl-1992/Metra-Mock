@@ -81,15 +81,15 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ode-oO-fHt" userLabel="Clouds">
-                                <rect key="frame" x="0.0" y="160" width="375" height="199"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5oH-K7-17s" userLabel="Clouds">
+                                <rect key="frame" x="0.0" y="174" width="375" height="277"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="clouds" destination="Ode-oO-fHt" id="nVs-Pv-Qd0"/>
+                        <outlet property="clouds" destination="5oH-K7-17s" id="dRL-iY-nPM"/>
                         <outlet property="timeLabel" destination="ygb-Ml-wqW" id="AY0-kc-X5g"/>
                     </connections>
                 </viewController>
