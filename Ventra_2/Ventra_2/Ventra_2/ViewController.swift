@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var skyline: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var clouds: UIImageView!
     
@@ -43,6 +44,9 @@ class ViewController: UIViewController {
         backgroundImageView2.contentMode = UIViewContentMode.scaleAspectFit
         backgroundImageView2.frame = CGRect(x: backgroundImageView1.frame.size.width, y: self.clouds.frame.origin.y, width: backgroundImage.size.width - amountToKeepImageSquare, height: self.clouds.frame.height)
         self.view.addSubview(backgroundImageView2)
+        
+        self.view.insertSubview(backgroundImageView1, belowSubview: skyline)
+        self.view.insertSubview(backgroundImageView2, belowSubview: skyline)
         
         UIView.animate(withDuration: 20.0, delay: 0, options: [.repeat, .curveLinear], animations: { backgroundImageView1.frame = backgroundImageView1.frame.offsetBy(dx: -1 * backgroundImageView1.frame.size.width, dy: 0.0)
             backgroundImageView2.frame = backgroundImageView2.frame.offsetBy(dx: -1 * backgroundImageView2.frame.size.width, dy: 0.0) }, completion: nil)

@@ -81,8 +81,21 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bX6-Ej-gYZ" userLabel="Foreground">
+                                <rect key="frame" x="0.0" y="447" width="375" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90980392156862744" green="0.92156862745098034" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Skyline_&amp;_Tracks" translatesAutoresizingMaskIntoConstraints="NO" id="owd-8s-CZH">
+                                <rect key="frame" x="0.0" y="210" width="375" height="287"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tracks_2" translatesAutoresizingMaskIntoConstraints="NO" id="YoD-fJ-vO2">
+                                <rect key="frame" x="-41" y="505" width="457" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5oH-K7-17s" userLabel="Clouds">
-                                <rect key="frame" x="0.0" y="174" width="375" height="277"/>
+                                <rect key="frame" x="0.0" y="142" width="375" height="277"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -90,6 +103,7 @@
                     </view>
                     <connections>
                         <outlet property="clouds" destination="5oH-K7-17s" id="dRL-iY-nPM"/>
+                        <outlet property="skyline" destination="owd-8s-CZH" id="WxF-eW-DPj"/>
                         <outlet property="timeLabel" destination="ygb-Ml-wqW" id="AY0-kc-X5g"/>
                     </connections>
                 </viewController>
@@ -102,6 +116,8 @@
         <image name="Arrow_Spin" width="65" height="79"/>
         <image name="Back_Arrow" width="25" height="41"/>
         <image name="QR_Code" width="244" height="242"/>
+        <image name="Skyline_&amp;_Tracks" width="1710" height="1125"/>
+        <image name="Tracks_2" width="736" height="97"/>
     </resources>
     <color key="tintColor" red="0.92941176470588238" green="0.93725490196078431" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
 </document>
