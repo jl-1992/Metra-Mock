@@ -91,11 +91,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tracks_2" translatesAutoresizingMaskIntoConstraints="NO" id="YoD-fJ-vO2">
-                                <rect key="frame" x="-41" y="505" width="457" height="46"/>
+                                <rect key="frame" x="-53" y="505" width="473" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5oH-K7-17s" userLabel="Clouds">
-                                <rect key="frame" x="0.0" y="142" width="375" height="277"/>
+                                <rect key="frame" x="0.0" y="142" width="375" height="217"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ytp-U6-mZh" userLabel="TrainFront">
+                                <rect key="frame" x="-5" y="481" width="380" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -105,6 +109,7 @@
                         <outlet property="clouds" destination="5oH-K7-17s" id="dRL-iY-nPM"/>
                         <outlet property="skyline" destination="owd-8s-CZH" id="WxF-eW-DPj"/>
                         <outlet property="timeLabel" destination="ygb-Ml-wqW" id="AY0-kc-X5g"/>
+                        <outlet property="trainFront" destination="Ytp-U6-mZh" id="nEC-bm-WlF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
