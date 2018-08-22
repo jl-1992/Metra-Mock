@@ -102,6 +102,10 @@
                                 <rect key="frame" x="-5" y="481" width="380" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bxU-sM-Q6R" userLabel="TrainBack">
+                                <rect key="frame" x="0.0" y="395" width="375" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -109,6 +113,7 @@
                         <outlet property="clouds" destination="5oH-K7-17s" id="dRL-iY-nPM"/>
                         <outlet property="skyline" destination="owd-8s-CZH" id="WxF-eW-DPj"/>
                         <outlet property="timeLabel" destination="ygb-Ml-wqW" id="AY0-kc-X5g"/>
+                        <outlet property="trainBack" destination="bxU-sM-Q6R" id="x9p-Tm-Vf7"/>
                         <outlet property="trainFront" destination="Ytp-U6-mZh" id="nEC-bm-WlF"/>
                     </connections>
                 </viewController>
