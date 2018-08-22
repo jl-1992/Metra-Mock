@@ -6,15 +6,21 @@
 //  Copyright © 2018 Fish Ludy. All rights reserved.
 //
 
+// TO-DO:
+// 1. Add in moving people
+// 2. Add in on-click event
+// 3. General cleanup of layout
+
 import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var skyline: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var clouds: UIImageView!
     @IBOutlet weak var trainFront: UIImageView!
     @IBOutlet weak var trainBack: UIImageView!
+    @IBOutlet weak var station: UIImageView!
+    @IBOutlet weak var skyline: UIImageView!
     
     var timer = Timer()
     let formatter: DateFormatter = {
@@ -30,8 +36,6 @@ class ViewController: UIViewController {
         animateClouds()
         animateFrontTrain()
         animateBackTrain()
-        // Make station and skyline different views
-        
     }
     
     func animateClouds() {
@@ -92,6 +96,9 @@ class ViewController: UIViewController {
         backgroundImageView2.contentMode = UIViewContentMode.scaleAspectFit
         backgroundImageView2.frame = CGRect(x: -backgroundImageView1.frame.size.width + self.trainBack.frame.maxX, y: self.trainBack.frame.origin.y, width: -backgroundImage.size.width + amountToKeepImageSquare, height: self.trainBack.frame.height)
         self.view.addSubview(backgroundImageView2)
+        
+        self.view.insertSubview(backgroundImageView1, belowSubview: station)
+        self.view.insertSubview(backgroundImageView2, belowSubview: station)
         
         UIView.animate(withDuration: 9.0, delay: 0, options: [.repeat, .curveLinear], animations: {
             backgroundImageView1.frame = backgroundImageView1.frame.offsetBy(dx: 1 * backgroundImageView1.frame.size.width, dy: 0.0)
