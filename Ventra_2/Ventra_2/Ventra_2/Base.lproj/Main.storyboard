@@ -118,11 +118,16 @@
                                 <rect key="frame" x="-3" y="453" width="380" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vuA-UW-0sZ" userLabel="People">
+                                <rect key="frame" x="0.0" y="416" width="377" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="clouds" destination="5oH-K7-17s" id="dRL-iY-nPM"/>
+                        <outlet property="people" destination="vuA-UW-0sZ" id="56T-0K-hTa"/>
                         <outlet property="skyline" destination="owd-8s-CZH" id="kvs-EC-t7w"/>
                         <outlet property="station" destination="fx7-OH-GMd" id="181-ta-yhu"/>
                         <outlet property="timeLabel" destination="ygb-Ml-wqW" id="AY0-kc-X5g"/>
