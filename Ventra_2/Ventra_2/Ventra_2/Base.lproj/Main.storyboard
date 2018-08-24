@@ -86,7 +86,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90980392156862744" green="0.92156862745098034" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Skyline" translatesAutoresizingMaskIntoConstraints="NO" id="owd-8s-CZH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Skyline_Light" translatesAutoresizingMaskIntoConstraints="NO" id="owd-8s-CZH" userLabel="Skyline_Light">
+                                <rect key="frame" x="0.0" y="208" width="375" height="302"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Skyline_Dark" translatesAutoresizingMaskIntoConstraints="NO" id="98I-Lv-D8u" userLabel="Skyline_Dark">
                                 <rect key="frame" x="0.0" y="208" width="375" height="302"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -122,13 +126,21 @@
                                 <rect key="frame" x="0.0" y="416" width="377" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3m-4X-Lna">
+                                <rect key="frame" x="5" y="60" width="370" height="498"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FoJ-fU-msf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="clouds" destination="5oH-K7-17s" id="dRL-iY-nPM"/>
                         <outlet property="people" destination="vuA-UW-0sZ" id="56T-0K-hTa"/>
-                        <outlet property="skyline" destination="owd-8s-CZH" id="kvs-EC-t7w"/>
+                        <outlet property="skylineDark" destination="98I-Lv-D8u" id="plU-mN-kg7"/>
+                        <outlet property="skylineLight" destination="owd-8s-CZH" id="9ma-Aw-abS"/>
                         <outlet property="station" destination="fx7-OH-GMd" id="181-ta-yhu"/>
                         <outlet property="timeLabel" destination="ygb-Ml-wqW" id="AY0-kc-X5g"/>
                         <outlet property="trainBack" destination="bxU-sM-Q6R" id="x9p-Tm-Vf7"/>
@@ -144,7 +156,8 @@
         <image name="Arrow_Spin" width="65" height="79"/>
         <image name="Back_Arrow" width="25" height="41"/>
         <image name="QR_Code" width="244" height="242"/>
-        <image name="Skyline" width="846" height="451"/>
+        <image name="Skyline_Dark" width="1762" height="939"/>
+        <image name="Skyline_Light" width="1762" height="939"/>
         <image name="Station" width="558" height="200"/>
         <image name="Station_Windows" width="558" height="200"/>
         <image name="Tracks_Back" width="848" height="43"/>

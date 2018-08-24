@@ -7,21 +7,44 @@
 //
 
 // TO-DO:
-// 1. Add in on-click event
-// 2. Check timing of entire view
-// 3. General cleanup of layout
+// 1. Add people to on-click event
+// 2. Fix skyline and top of train images
+// 3. Check timing of entire view
+// 4. Make animatePeople() faster
 
 import UIKit
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var timeLabel: UILabel!
+    
     @IBOutlet weak var clouds: UIImageView!
     @IBOutlet weak var trainFront: UIImageView!
     @IBOutlet weak var trainBack: UIImageView!
     @IBOutlet weak var station: UIImageView!
-    @IBOutlet weak var skyline: UIImageView!
     @IBOutlet weak var people: UIImageView!
+    @IBOutlet weak var skylineLight: UIImageView!
+    @IBOutlet weak var skylineDark: UIImageView!
+    
+    var clicked = false
+    
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        if (!clicked) {
+            skylineLight.image = skylineLight.image!.withRenderingMode(.alwaysTemplate)
+            skylineDark.image = skylineDark.image!.withRenderingMode(.alwaysTemplate)
+            
+            skylineLight.tintColor = UIColor(red: 218/255, green: 140/255, blue: 118/255, alpha:1.0)
+            skylineDark.tintColor = UIColor(red: 198/255, green: 77/255, blue: 45/255, alpha:1.0)
+            
+            clicked = true
+        } else {
+            skylineLight.image = #imageLiteral(resourceName: "Skyline_Light")
+            skylineDark.image = #imageLiteral(resourceName: "Skyline_Dark")
+            
+            clicked = false
+        }
+    }
+    
     
     var timer = Timer()
     let formatter: DateFormatter = {
@@ -37,7 +60,7 @@ class ViewController: UIViewController {
         animateClouds()
         animateFrontTrain()
         animateBackTrain()
-        animatePeople()
+        animatePeople()        
     }
     
     func animateClouds() {
@@ -56,8 +79,12 @@ class ViewController: UIViewController {
         backgroundImageView2.frame = CGRect(x: backgroundImageView1.frame.size.width, y: self.clouds.frame.origin.y, width: backgroundImage.size.width - amountToKeepImageSquare, height: self.clouds.frame.height)
         self.view.addSubview(backgroundImageView2)
         
-        self.view.insertSubview(backgroundImageView1, belowSubview: skyline)
-        self.view.insertSubview(backgroundImageView2, belowSubview: skyline)
+        self.view.insertSubview(backgroundImageView1, belowSubview: skylineLight)
+        self.view.insertSubview(backgroundImageView2, belowSubview: skylineLight)
+        
+        // Get clouds to go behind both views
+//        self.view.insertSubview(backgroundImageView1, belowSubview: skylineDark)
+//        self.view.insertSubview(backgroundImageView2, belowSubview: skylineDark)
         
         UIView.animate(withDuration: 20.0, delay: 0, options: [.repeat, .curveLinear], animations: { backgroundImageView1.frame = backgroundImageView1.frame.offsetBy(dx: -1 * backgroundImageView1.frame.size.width, dy: 0.0)
             backgroundImageView2.frame = backgroundImageView2.frame.offsetBy(dx: -1 * backgroundImageView2.frame.size.width, dy: 0.0) }, completion: nil)
@@ -106,10 +133,6 @@ class ViewController: UIViewController {
             backgroundImageView1.frame = backgroundImageView1.frame.offsetBy(dx: 1 * backgroundImageView1.frame.size.width, dy: 0.0)
             backgroundImageView2.frame = backgroundImageView2.frame.offsetBy(dx: 1 * backgroundImageView2.frame.size.width, dy: 0.0)}, completion: nil)
     }
-    
-    // Define people image values
-    
-    
     
     func animatePeople() {
         // First two people who enter from left
