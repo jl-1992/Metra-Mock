@@ -7,10 +7,9 @@
 //
 
 // TO-DO:
-// 1. Add people to on-click event
-// 2. Fix skyline and top of train images
-// 3. Check timing of entire view
-// 4. Make animatePeople() faster
+// 1. Fix skyline and top of train images
+// 2. Check timing of entire view
+// 3. Make animatePeople() faster
 
 import UIKit
 
@@ -33,13 +32,34 @@ class ViewController: UIViewController {
             skylineLight.image = skylineLight.image!.withRenderingMode(.alwaysTemplate)
             skylineDark.image = skylineDark.image!.withRenderingMode(.alwaysTemplate)
             
+            people1.image = people1.image!.withRenderingMode(.alwaysTemplate)
+            person1.image = person1.image!.withRenderingMode(.alwaysTemplate)
+            people3.image = people3.image!.withRenderingMode(.alwaysTemplate)
+            person2.image = person2.image!.withRenderingMode(.alwaysTemplate)
+            people4.image = people4.image!.withRenderingMode(.alwaysTemplate)
+            people5.image = people5.image!.withRenderingMode(.alwaysTemplate)
+            
             skylineLight.tintColor = UIColor(red: 218/255, green: 140/255, blue: 118/255, alpha:1.0)
             skylineDark.tintColor = UIColor(red: 198/255, green: 77/255, blue: 45/255, alpha:1.0)
+            
+            people1.tintColor = UIColor(red: 122/255, green: 198/255, blue: 226/255, alpha:1.0)
+            person1.tintColor = UIColor(red: 122/255, green: 198/255, blue: 226/255, alpha:1.0)
+            people3.tintColor = UIColor(red: 122/255, green: 198/255, blue: 226/255, alpha:1.0)
+            person2.tintColor = UIColor(red: 122/255, green: 198/255, blue: 226/255, alpha:1.0)
+            people4.tintColor = UIColor(red: 122/255, green: 198/255, blue: 226/255, alpha:1.0)
+            people5.tintColor = UIColor(red: 122/255, green: 198/255, blue: 226/255, alpha:1.0)
             
             clicked = true
         } else {
             skylineLight.image = #imageLiteral(resourceName: "Skyline_Light")
             skylineDark.image = #imageLiteral(resourceName: "Skyline_Dark")
+            
+            people1.image = #imageLiteral(resourceName: "People_1")
+            person1.image = #imageLiteral(resourceName: "Person")
+            people3.image = #imageLiteral(resourceName: "People_3")
+            person2.image = #imageLiteral(resourceName: "Person")
+            people4.image = #imageLiteral(resourceName: "People_1")
+            people5.image = #imageLiteral(resourceName: "People_1")
             
             clicked = false
         }
@@ -81,10 +101,6 @@ class ViewController: UIViewController {
         
         self.view.insertSubview(backgroundImageView1, belowSubview: skylineLight)
         self.view.insertSubview(backgroundImageView2, belowSubview: skylineLight)
-        
-        // Get clouds to go behind both views
-//        self.view.insertSubview(backgroundImageView1, belowSubview: skylineDark)
-//        self.view.insertSubview(backgroundImageView2, belowSubview: skylineDark)
         
         UIView.animate(withDuration: 20.0, delay: 0, options: [.repeat, .curveLinear], animations: { backgroundImageView1.frame = backgroundImageView1.frame.offsetBy(dx: -1 * backgroundImageView1.frame.size.width, dy: 0.0)
             backgroundImageView2.frame = backgroundImageView2.frame.offsetBy(dx: -1 * backgroundImageView2.frame.size.width, dy: 0.0) }, completion: nil)
@@ -133,95 +149,89 @@ class ViewController: UIViewController {
             backgroundImageView1.frame = backgroundImageView1.frame.offsetBy(dx: 1 * backgroundImageView1.frame.size.width, dy: 0.0)
             backgroundImageView2.frame = backgroundImageView2.frame.offsetBy(dx: 1 * backgroundImageView2.frame.size.width, dy: 0.0)}, completion: nil)
     }
+    let people1 = UIImageView(image: #imageLiteral(resourceName: "People_1"))
+    let person1 = UIImageView(image: #imageLiteral(resourceName: "Person"))
+    let people3 = UIImageView(image: #imageLiteral(resourceName: "People_3"))
+    let person2 = UIImageView(image: #imageLiteral(resourceName: "Person"))
+    let people4 = UIImageView(image: #imageLiteral(resourceName: "People_1"))
+    let people5 = UIImageView(image: #imageLiteral(resourceName: "People_1"))
     
     func animatePeople() {
         // First two people who enter from left
-        let image1 = UIImage(named:"People_1")!
-        
-        let people1 = UIImageView(image: image1)
         people1.contentMode = UIViewContentMode.scaleAspectFit
-        people1.frame = CGRect(x: self.people.frame.origin.x, y: self.people.frame.origin.y, width: image1.size.width, height: self.people.frame.size.height)
+        people1.frame = CGRect(x: self.people.frame.origin.x, y: self.people.frame.origin.y, width: self.people1.image!.size.width, height: self.people.frame.size.height)
         self.view.addSubview(people1)
 
         self.view.insertSubview(people1, belowSubview: station)
         
         UIView.animate(withDuration: 5.0, delay: 0, options: [.curveLinear], animations: {
-            people1.frame = people1.frame.offsetBy(dx: 4 * people1.frame.size.width, dy: 0.0)}, completion: nil)
+            self.people1.frame = self.people1.frame.offsetBy(dx: 4 * self.people1.frame.size.width, dy: 0.0)}, completion: nil)
         
         // Person 1 (from left)
-        let image2 = UIImage(named:"Person")!
-        
-        let person1 = UIImageView(image: image2)
         person1.contentMode = UIViewContentMode.scaleAspectFit
-        person1.frame = CGRect(x: self.people.frame.origin.x - 45, y: self.people.frame.origin.y, width: image2.size.width, height: self.people.frame.size.height)
+        person1.frame = CGRect(x: self.people.frame.origin.x - 45, y: self.people.frame.origin.y, width: self.person1.image!.size.width, height: self.people.frame.size.height)
         self.view.addSubview(person1)
         
         self.view.insertSubview(person1, belowSubview: station)
         
         UIView.animate(withDuration: 4.0, delay: 4.0, options: [.curveLinear], animations: {
-            person1.frame = person1.frame.offsetBy(dx: self.people.frame.maxX, dy: 0.0)
+            self.person1.frame = self.person1.frame.offsetBy(dx: self.people.frame.maxX, dy: 0.0)
         }, completion: { finished in
             if finished {
                 UIView.animate(withDuration: 4.0, delay: 0, options: [.curveLinear], animations: {
-                    person1.frame = person1.frame.offsetBy(dx: -self.people.frame.maxX - 30, dy: 0.0)
+                    self.person1.frame = self.person1.frame.offsetBy(dx: -self.people.frame.maxX - 30, dy: 0.0)
                 }, completion: nil)
             }
         })
         
         // First two people who enter from right
-        let image3 = UIImage(named:"People_3")!
-        
-        let people3 = UIImageView(image: image3)
         people3.contentMode = UIViewContentMode.scaleAspectFit
-        people3.frame = CGRect(x: self.people.frame.maxX, y: self.people.frame.origin.y, width: image1.size.width, height: self.people.frame.size.height)
+        people3.frame = CGRect(x: self.people.frame.maxX, y: self.people.frame.origin.y, width: self.people1.image!.size.width, height: self.people.frame.size.height)
         self.view.addSubview(people3)
         
         self.view.insertSubview(people3, belowSubview: station)
         
         UIView.animate(withDuration: 5.0, delay: 4.5, options: [.curveLinear], animations: {
-            people3.frame = people3.frame.offsetBy(dx: -self.people.frame.size.width - people3.frame.size.width, dy: 0.0)}, completion: nil)
+            self.people3.frame = self.people3.frame.offsetBy(dx: -self.people.frame.size.width - self.people3.frame.size.width, dy: 0.0)}, completion: nil)
 
         // Person 2 (from left)
-        let person2 = UIImageView(image: image2)
         person2.contentMode = UIViewContentMode.scaleAspectFit
-        person2.frame = CGRect(x: self.people.frame.origin.x - 45, y: self.people.frame.origin.y, width: image2.size.width, height: self.people.frame.size.height)
+        self.person2.frame = CGRect(x: self.people.frame.origin.x - 45, y: self.people.frame.origin.y, width: self.person2.image!.size.width, height: self.people.frame.size.height)
         self.view.addSubview(person2)
         
         self.view.insertSubview(person2, belowSubview: station)
         
         UIView.animate(withDuration: 4.0, delay: 5.0, options: [.curveLinear], animations: {
-            person2.frame = person2.frame.offsetBy(dx: self.people.frame.maxX + 20, dy: 0.0)
+            self.person2.frame = self.person2.frame.offsetBy(dx: self.people.frame.maxX + 20, dy: 0.0)
         }, completion: nil)
         
         // Second two people from right
-        let people4 = UIImageView(image: image1)
         people4.contentMode = UIViewContentMode.scaleAspectFit
-        people4.frame = CGRect(x: self.people.frame.maxX, y: self.people.frame.origin.y, width: image1.size.width, height: self.people.frame.size.height)
+        people4.frame = CGRect(x: self.people.frame.maxX, y: self.people.frame.origin.y, width: self.people1.image!.size.width, height: self.people.frame.size.height)
         self.view.addSubview(people4)
         
         self.view.insertSubview(people4, belowSubview: station)
         
         // Last two people from left that end abruptly
-        let people5 = UIImageView(image: image1)
         people5.contentMode = UIViewContentMode.scaleAspectFit
-        people5.frame = CGRect(x: self.people.frame.origin.x - people5.frame.size.width, y: self.people.frame.origin.y, width: image1.size.width, height: self.people.frame.size.height)
+        people5.frame = CGRect(x: self.people.frame.origin.x - people5.frame.size.width, y: self.people.frame.origin.y, width: self.people1.image!.size.width, height: self.people.frame.size.height)
         self.view.addSubview(people5)
         
         self.view.insertSubview(people5, belowSubview: station)
         
         // Animate people4
         UIView.animate(withDuration: 7.0, delay: 8.5, options: [.curveLinear], animations: {
-            people4.frame = people4.frame.offsetBy(dx: -self.people.frame.size.width, dy: 0.0)}, completion: { finished in
+            self.people4.frame = self.people4.frame.offsetBy(dx: -self.people.frame.size.width, dy: 0.0)}, completion: { finished in
                 if finished {
-                    people5.isHidden = true
-                    people4.isHidden = true
+                    self.people5.isHidden = true
+                    self.people4.isHidden = true
                     self.animatePeople()
                 }
         })
         
         // Animate people5
         UIView.animate(withDuration: 7.0, delay: 9.0, options: [.curveLinear], animations: {
-            people5.frame = people5.frame.offsetBy(dx: 2 * people5.frame.size.width, dy: 0.0)}, completion: nil)
+            self.people5.frame = self.people5.frame.offsetBy(dx: 2 * self.people5.frame.size.width, dy: 0.0)}, completion: nil)
     }
     
     func setTimer() {
