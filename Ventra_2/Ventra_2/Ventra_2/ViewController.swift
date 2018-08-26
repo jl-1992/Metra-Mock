@@ -6,11 +6,6 @@
 //  Copyright © 2018 Fish Ludy. All rights reserved.
 //
 
-// TO-DO:
-// 1. Fix skyline and top of train images
-// 2. Check timing of entire view
-// 3. Make animatePeople() faster
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -26,6 +21,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var skylineDark: UIImageView!
     
     var clicked = false
+    
+    let people1 = UIImageView(image: #imageLiteral(resourceName: "People_1"))
+    let person1 = UIImageView(image: #imageLiteral(resourceName: "Person"))
+    let people3 = UIImageView(image: #imageLiteral(resourceName: "People_3"))
+    let person2 = UIImageView(image: #imageLiteral(resourceName: "Person"))
+    let people4 = UIImageView(image: #imageLiteral(resourceName: "People_1"))
+    let people5 = UIImageView(image: #imageLiteral(resourceName: "People_1"))
     
     @IBAction func buttonTapped(_ sender: UIButton) {
         if (!clicked) {
@@ -102,7 +104,7 @@ class ViewController: UIViewController {
         self.view.insertSubview(backgroundImageView1, belowSubview: skylineLight)
         self.view.insertSubview(backgroundImageView2, belowSubview: skylineLight)
         
-        UIView.animate(withDuration: 20.0, delay: 0, options: [.repeat, .curveLinear], animations: { backgroundImageView1.frame = backgroundImageView1.frame.offsetBy(dx: -1 * backgroundImageView1.frame.size.width, dy: 0.0)
+        UIView.animate(withDuration: 23.0, delay: 0, options: [.repeat, .curveLinear], animations: { backgroundImageView1.frame = backgroundImageView1.frame.offsetBy(dx: -1 * backgroundImageView1.frame.size.width, dy: 0.0)
             backgroundImageView2.frame = backgroundImageView2.frame.offsetBy(dx: -1 * backgroundImageView2.frame.size.width, dy: 0.0) }, completion: nil)
     }
     
@@ -145,16 +147,10 @@ class ViewController: UIViewController {
         self.view.insertSubview(backgroundImageView1, belowSubview: station)
         self.view.insertSubview(backgroundImageView2, belowSubview: station)
         
-        UIView.animate(withDuration: 9.0, delay: 0, options: [.repeat, .curveLinear], animations: {
+        UIView.animate(withDuration: 10.0, delay: 0, options: [.repeat, .curveLinear], animations: {
             backgroundImageView1.frame = backgroundImageView1.frame.offsetBy(dx: 1 * backgroundImageView1.frame.size.width, dy: 0.0)
             backgroundImageView2.frame = backgroundImageView2.frame.offsetBy(dx: 1 * backgroundImageView2.frame.size.width, dy: 0.0)}, completion: nil)
     }
-    let people1 = UIImageView(image: #imageLiteral(resourceName: "People_1"))
-    let person1 = UIImageView(image: #imageLiteral(resourceName: "Person"))
-    let people3 = UIImageView(image: #imageLiteral(resourceName: "People_3"))
-    let person2 = UIImageView(image: #imageLiteral(resourceName: "Person"))
-    let people4 = UIImageView(image: #imageLiteral(resourceName: "People_1"))
-    let people5 = UIImageView(image: #imageLiteral(resourceName: "People_1"))
     
     func animatePeople() {
         // First two people who enter from left
